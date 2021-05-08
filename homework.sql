@@ -30,4 +30,18 @@ CREATE TABLE dept_managers(
 
 );
 --department employees
+CREATE TABLE dept_employees(
+	emp_no VARCHAR,
+	dept_no INT,
+	FOREIGN KEY (dept_no) REFERENCES departments(dept_no),
+	FOREIGN KEY (emp_no) REFERENCES employees(emp_no),
+	PRIMARY KEY(emp_no, dept_no)
+
+);
 --salaries
+CREATE TABLE salaries(
+	emp_no INT PRIMARY KEY,
+	salary INT,
+	FOREIGN KEY (emp_no) REFERENCES employees(emp_no),
+
+);
